@@ -115,6 +115,7 @@ nav h1 a {
 #breadcrumb li a {
   color: #0c2251;
   text-decoration: none;
+  font-weight:bold;
 }
 
 /* Add a color on mouse-over */
@@ -138,15 +139,15 @@ nav h1 a {
   align-items: center;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  position:fixed;
-  top:55vh;
-  height:8vh;
+  display:flex;
+  //position:fixed;
+  //top:55vh;
+  //height:8vh;
  }
 
 .filter-options h2 {
   color: white ;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 17px;
   line-height: 1;
   margin: 0 1em;
 }
@@ -165,7 +166,8 @@ nav h1 a {
 /* ====================== Restaurant Listing ====================== */
 #indexcontent {
 position:absolute;
-  top:63vh;
+  top:10vh;
+  width:100%;
 }
 #restaurants-list {
   background-color: #f3f3f3;
@@ -228,15 +230,15 @@ position:absolute;
 
 #map-container {
   background: blue none repeat scroll 0 0;
-  position: fixed;
-  top: 10vh;
+  //position: fixed;
+  //top: 10vh;
   width: 100%;
   height: 45vh;
   z-index: 1;
   margin: 0;
 }
 
-a:focus, select:focus, option:focus {
+a:focus, select:focus, option:focus, div:focus, section:focus {
   border:2px solid orange;
   box-shadow:0 0 10px white;
 }
@@ -244,7 +246,7 @@ a:focus, select:focus, option:focus {
 #content {
   position:relative;
   width: 100%;
-  top:65vh;
+  top:20vh;
 }
 .inside header {
   position: fixed;
@@ -255,8 +257,6 @@ a:focus, select:focus, option:focus {
 
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  position: fixed;
-  top: 20vh;
   width: 100%;
   height: 45vh;
   z-index: 1;
