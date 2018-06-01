@@ -133,7 +133,7 @@ createReviewHTML = (review) => {
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
-
+li.tabindex="0";
   return li;
 }
 
@@ -143,6 +143,7 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  li.setAttribute('tabindex','0');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }

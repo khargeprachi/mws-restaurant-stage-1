@@ -31,7 +31,7 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
-  neighborhoods.forEach(neighborhood => {
+  neighborhoods.forEach((neighborhood,i) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
@@ -137,7 +137,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
-
+  li.tabindex="0";
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.alt=restaurant.name + ' Restaurant';
@@ -154,6 +154,7 @@ createRestaurantHTML = (restaurant) => {
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  //address.setAttribute('tabindex','0');
   li.append(address);
 
   const more = document.createElement('a');
@@ -161,7 +162,7 @@ createRestaurantHTML = (restaurant) => {
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
-  return li
+  return li;
 }
 
 /**
@@ -171,6 +172,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
+
     google.maps.event.addListener(marker, 'click', () => {
       window.location.href = marker.url
     });
